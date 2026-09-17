@@ -65,7 +65,7 @@ def check(root, origin, baseurl):
                 assert unquote(parsed.fragment) in pages[target].ids, f'Missing anchor: {href}'
     for path in root.rglob("*"):
         if path.is_file():
-            assert path.suffix in {".html", ".css", ".svg", ".pdf", ".xml", ".txt"}, f'Unexpected output: {path}'
+            assert path.suffix in {".html", ".css", ".svg", ".jpg", ".jpeg", ".png", ".webp", ".pdf", ".xml", ".txt"}, f'Unexpected output: {path}'
     cv = root / "assets/cv/Aram_Bagdasarian_CV.pdf"
     assert cv.read_bytes().startswith(b"%PDF-"), "Missing or invalid CV"
     for name in ("sitemap.xml", "feed.xml", "robots.txt"):

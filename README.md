@@ -3,6 +3,12 @@
 Personal academic website at **https://arambagdasarian.github.io/**.
 Built with Jekyll and Markdown. A push to `main` builds and deploys the site through GitHub Actions.
 
+## Approved styling
+
+Aram approved the current styling on September 17, 2026. Preserve the monochrome palette, Georgia typography, reading width, spacing, navigation, and plain research lists. Keep later additions consistent with this design; change the visual direction only when Aram requests it.
+
+The homepage portrait is a small monochrome crop at `assets/images/aram-bagdasarian.jpg`. The original full-resolution photo stays local and is excluded from Git and the site build.
+
 ## Add an update
 
 Create one file in `_posts/` named `YYYY-MM-DD-short-title.md`. You can do this on GitHub using **Add file > Create new file**, or in your local editor. Use the actual publication date and a short, stable filename. The homepage, archive, RSS feed, and sitemap update automatically.

@@ -21,8 +21,9 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
-    <header class="site-header">
+    <header class="site-header{% if page.home %} has-portrait{% endif %}">
       {% if page.home %}
+      <img class="portrait" src="{{ '/assets/images/aram-bagdasarian.jpg' | relative_url }}" alt="Aram Bagdasarian" width="448" height="448">
       <h1 class="site-name">{{ site.title }}</h1>
       <p class="affiliation">Statistics &amp; Government · Harvard University</p>
       {% else %}
