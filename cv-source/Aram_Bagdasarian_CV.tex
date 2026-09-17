@@ -1,0 +1,62 @@
+% Public CV. Compile with XeLaTeX; the application CV is maintained separately.
+\documentclass[10pt]{article}
+\usepackage[letterpaper,top=0.65in,bottom=0.65in,left=0.75in,right=0.75in]{geometry}
+\usepackage{fontspec}
+\usepackage[hidelinks]{hyperref}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{Times New Roman}}
+\hypersetup{pdftitle={Aram Bagdasarian - Curriculum Vitae},pdfauthor={Aram Bagdasarian}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\emergencystretch=2em
+\newcommand{\cvsection}[1]{\vspace{5pt}{\large\bfseries #1}\par\vspace{3pt}\hrule\vspace{5pt}}
+\newcommand{\entry}[4]{\textbf{#1}\hfill #2\par\vspace{-3pt}\textit{#3}\par\vspace{-2pt}#4\par\vspace{2pt}}
+\begin{document}
+\fontsize{10.5pt}{12pt}\selectfont
+{\centering {\LARGE Aram Bagdasarian}\par
+\href{mailto:abagdasarian@college.harvard.edu}{abagdasarian@college.harvard.edu}\quad\textbullet\quad
+\href{https://arambagdasarian.github.io}{arambagdasarian.github.io}\par}
+
+\cvsection{Education}
+\textbf{Harvard University}\hfill Expected May 2027\par
+A.B. in Statistics and Government, double concentration\par
+Coursework includes probability, statistical inference, causal inference, linear models, data science, statistics of networks, multivariable calculus, and linear algebra.
+
+\cvsection{Research Interests}
+Causal inference, partial identification, language model evaluation, and reliable measurement in quantitative social science.
+
+\cvsection{Workshop Paper}
+Ali Saffarini and \textbf{Aram Bagdasarian}. ``Auditing Chain-of-Thought Faithfulness for Trustworthy AI: A Reproducible Corruption-Probe Protocol Across Eleven Frontier LLMs.'' \textit{Trustworthy AI for Good (AI4GOOD) Workshop, ICML 2026}. \href{https://openreview.net/forum?id=T9CoKxEx3X}{OpenReview}.
+
+\cvsection{Research Experience}
+\entry{Harvard University, Department of Government}{Aug 2026 - Present}
+{Research Assistant to Guilherme Duarte}
+{Work on partial identification and automated causal bounds using \texttt{autobounds}.}
+\entry{Harvard University, Department of Government}{Feb 2026 - Present}
+{Research Assistant to Melani Cammett}
+{Built an LLM-assisted article-screening pipeline for a meta-analysis of the political economy of war; worked on data cleaning and effect-size coding.}
+\entry{ZOiS, Centre for East European and International Studies}{May 2025 - Present}
+{Data Science Research Intern, Berlin}
+{Collected Russian-language documents and used text-as-data methods and social network analysis to study Russia's brokerage networks.}
+\entry{Kempner Institute, Harvard University}{Aug 2026 - Present}
+{Kure Research Fellow}
+{Benchmark foundation models for neuroimaging against conventional baselines.}
+\entry{Harvard Center for International Development}{Sep 2025 - May 2026}
+{Student Research Scholar}
+{Built an audio and visual processing pipeline to classify TikTok content for media-diet measurement.}
+\entry{Central Bank of Armenia}{Sep 2024 - Jan 2025}
+{Research Associate}
+{Benchmarked the Bank's research standards against those of other central banks.}
+
+\cvsection{Teaching}
+\textbf{American University of Armenia}\hfill Summer 2026\par
+Teaching Assistant, CS 252, Data Science. Led lab sections and office hours and supported assignments.
+
+\cvsection{Leadership}
+\textbf{Teevial}, Founder\hfill Jan 2025 - Present\par
+Founded a data-focused youth organization in Armenia.\par
+\textbf{Harvard Boxing Club}, President\hfill Aug 2025 - May 2026
+
+\cvsection{Technical Skills}
+Python, R, SQL, Stata, LaTeX, and Git. Tools include PyTorch, scikit-learn, spaCy, NetworkX, and \texttt{autobounds}.
+\end{document}

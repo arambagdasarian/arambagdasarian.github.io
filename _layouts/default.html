@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  {% assign description = page.summary | default: page.description | default: site.description %}
+  <meta name="description" content="{{ description | strip_html | normalize_whitespace | escape }}">
+  {% if page.noindex %}<meta name="robots" content="noindex">{% else %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endif %}
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+  <meta property="og:description" content="{{ description | strip_html | normalize_whitespace | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  {% if page.layout == 'post' %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      {% if page.home %}
+      <h1 class="site-name">{{ site.title }}</h1>
+      <p class="affiliation">Statistics &amp; Government · Harvard University</p>
+      {% else %}
+      <a class="site-name home-link" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      {% endif %}
+      <nav aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}#research">Research</a>
+        <a href="{{ '/updates/' | relative_url }}"{% if page.url == '/updates/' %} aria-current="page"{% endif %}>Updates</a>
+        <a href="{{ site.cv_path | relative_url }}">CV (PDF)</a>
+        <a href="mailto:{{ site.email }}">Email</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">{{ content }}</main>
+    <footer class="site-footer">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="{{ site.github_url }}">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>

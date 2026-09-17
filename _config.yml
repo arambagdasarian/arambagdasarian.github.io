@@ -1,0 +1,49 @@
+title: Aram Bagdasarian
+description: >-
+  Aram Bagdasarian is a Harvard undergraduate studying Statistics and Government,
+  with interests in causal inference, partial identification, and language model evaluation.
+url: "https://arambagdasarian.github.io"
+baseurl: ""
+lang: en-US
+timezone: America/New_York
+email: abagdasarian@college.harvard.edu
+github_url: https://github.com/arambagdasarian
+cv_path: /assets/cv/Aram_Bagdasarian_CV.pdf
+author:
+  name: Aram Bagdasarian
+  email: abagdasarian@college.harvard.edu
+permalink: /updates/:year-:month-:day-:title/
+future: false
+unpublished: false
+show_drafts: false
+strict_front_matter: true
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  path: feed.xml
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
+  - cv-source
+  - vendor
+  - node_modules
+  - private
+  - WEBSITE_HANDOFF.md
+  - Resume_Aram_Bagdasarian.pdf

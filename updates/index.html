@@ -1,0 +1,13 @@
+---
+title: Updates
+description: Research notes and occasional updates from Aram Bagdasarian.
+permalink: /updates/
+---
+<h1>Updates</h1>
+<p class="page-intro">Research notes and occasional updates.</p>
+{% if site.posts.size > 0 %}
+{% include update-list.html posts=site.posts %}
+<p class="archive-link"><a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></p>
+{% else %}
+<p>No updates yet.</p>
+{% endif %}
