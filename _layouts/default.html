@@ -40,6 +40,8 @@
     <footer class="site-footer">
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       <a href="{{ site.github_url }}">GitHub</a>
+      {% if site.google_scholar_url %}<a href="{{ site.google_scholar_url | escape }}">Google Scholar</a>{% endif %}
+      {% if site.orcid_url %}<a href="{{ site.orcid_url }}" rel="me">ORCID</a>{% endif %}
     </footer>
   </div>
 </body>

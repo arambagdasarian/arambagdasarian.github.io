@@ -7,7 +7,7 @@ Built with Jekyll and Markdown. A push to `main` builds and deploys the site thr
 
 Aram approved the current styling on September 17, 2026. Preserve the monochrome palette, Georgia typography, reading width, spacing, navigation, and plain research lists. Keep later additions consistent with this design; change the visual direction only when Aram requests it.
 
-The homepage portrait is a small monochrome crop at `assets/images/aram-bagdasarian.jpg`. The original full-resolution photo stays local and is excluded from Git and the site build.
+The homepage portrait is a 144px monochrome crop at `assets/images/aram-bagdasarian.jpg`. The original full-resolution photo stays local and is excluded from Git and the site build.
 
 ## Add an update
 
@@ -40,7 +40,7 @@ For site links in posts, use Jekyll's URL filter, for example `[CV]({{ site.cv_p
 - Edit `_data/research.yml` for workshop papers. Add a separate category and template section when adding other types of work.
 - Replace `assets/cv/Aram_Bagdasarian_CV.pdf` to update every CV link without changing its address.
 - The public CV's editable source is `cv-source/Aram_Bagdasarian_CV.tex`. Compile with XeLaTeX into a temporary directory, inspect the PDF, then copy it to the stable asset path. The site build does not require LaTeX.
-- Edit `_config.yml` for the email, site description, and hosting URL. `baseurl` is empty because this is an account site.
+- Edit `_config.yml` for the email, site description, profile links (`github_url`, `google_scholar_url`, and `orcid_url`), and hosting URL. `baseurl` is empty because this is an account site.
 
 ## Preview locally
 
