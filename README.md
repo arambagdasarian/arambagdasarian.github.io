@@ -5,7 +5,7 @@ Built with Jekyll and Markdown. A push to `main` builds and deploys the site thr
 
 ## Approved styling
 
-Aram approved the current styling on September 17, 2026. Preserve the monochrome palette, Georgia typography, reading width, spacing, navigation, and plain research lists. Keep later additions consistent with this design; change the visual direction only when Aram requests it.
+Aram approved the current styling on September 17, 2026. Preserve the monochrome palette, Georgia typography, reading width, spacing, navigation, and plain research lists. Keep later additions consistent with this design; change the visual direction only when Aram requests it. Do not add a logo, favicon, or logo metadata.
 
 The homepage portrait is a 144px monochrome crop at `assets/images/aram-bagdasarian.jpg`. The original full-resolution photo stays local and is excluded from Git and the site build.
 
