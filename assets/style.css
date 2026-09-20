@@ -44,6 +44,24 @@ h2 { font-size: 1.32rem; margin: 0 0 18px; font-weight: 400; }
 .research-list h3 { font-size: 1rem; font-weight: 400; line-height: 1.55; margin: 0 0 6px; }
 .research-list p { margin: 0; font-size: .94rem; }
 .research-venue { color: var(--muted); font-style: italic; }
+.research-item--visual { display: grid; grid-template-columns: minmax(0, 1fr) 184px; gap: 24px; align-items: start; }
+.research-visual { position: relative; display: block; width: 184px; line-height: 0; border-radius: 4px; text-decoration: none; }
+.research-visual video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid #e5e5e5; border-radius: 4px; background: #f7f6f2; }
+.research-visual-title { position: absolute; right: 0; bottom: calc(100% + 10px); z-index: 2; width: 290px; max-width: calc(100vw - 40px); padding: 12px 14px; color: #fff; background: var(--ink); border-radius: 4px; font-size: .78rem; line-height: 1.5; opacity: 0; visibility: hidden; transition: opacity .15s ease; }
+.research-visual-title::after { content: ""; position: absolute; top: 100%; right: 22px; border: 6px solid transparent; border-top-color: var(--ink); }
+.research-visual-title::before { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 10px; }
+.research-visual:hover .research-visual-title, .research-visual:focus .research-visual-title { opacity: 1; visibility: visible; }
+.research-visual.is-dismissed .research-visual-title { opacity: 0; visibility: hidden; }
+@media (max-width: 600px) {
+  .research-item--visual { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .research-visual { order: -1; }
+  .research-visual-title { right: auto; left: 0; }
+  .research-visual-title::after { right: auto; left: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research-visual-title { transition: none; }
+}
+
 .update-list { list-style: none; padding: 0; margin: 20px 0 0; }
 .update-list li { display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 8px 22px; padding: 15px 0; border-top: 1px solid var(--rule); }
 .update-list time { padding-top: 2px; font-size: .85rem; color: var(--muted); }
@@ -85,7 +103,8 @@ h2 { font-size: 1.32rem; margin: 0 0 18px; font-weight: 400; }
 }
 @media print {
   .portrait { top: 0; }
-  .skip-link, nav, .back-link { display: none; }
+  .skip-link, nav, .back-link, .research-visual { display: none; }
+  .research-item--visual { display: block; }
   .site-shell { width: 100%; }
   .site-header { padding-top: 0; }
   a { text-decoration: none; }

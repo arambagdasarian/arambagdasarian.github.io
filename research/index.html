@@ -1,6 +1,7 @@
 ---
 title: Research
 permalink: /research/
+research_visuals: true
 ---
 <section id="research" aria-labelledby="research-heading">
   <h1 id="research-heading">Research</h1>
@@ -9,10 +10,13 @@ permalink: /research/
   <h2 class="subheading">Workshop papers</h2>
   <ul class="research-list">
     {% for paper in workshop_papers %}
-    <li>
-      <h3><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h3>
-      <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
-      <p class="research-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
+    <li{% if paper.visual %} class="research-item--visual"{% endif %}>
+      <div class="research-copy">
+        <h3><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h3>
+        <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
+        <p class="research-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
+      </div>
+      {% if paper.visual %}{% include research-visual.html paper=paper %}{% endif %}
     </li>
     {% endfor %}
   </ul>

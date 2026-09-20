@@ -38,6 +38,7 @@ For site links in posts, use Jekyll's URL filter, for example `[CV]({{ site.cv_p
 
 - Edit `index.html` for the homepage introduction, Current work, and Outside Harvard. The separate Research page is `research/index.html`, published at `/research/`.
 - Edit `_data/research.yml` for research entries. Use `status: "under_review"` for submissions displayed under Work under review; entries without this status appear under Workshop papers. Venue, year, and URL are optional for work under review. Omit venue details from the data when they should not be public. Format every author list with surnames and initials, retaining the supplied author order and using an ampersand before the final author. The template bolds `Bagdasarian, A.`.
+- The chain-of-thought paper has a conceptual Higgsfield animation, configured with `visual.video` and `visual.poster` asset paths. It plays silently on hover or keyboard focus, shows the existing paper title, and links to the paper. It stays still with reduced motion enabled; Escape dismisses the title and pauses playback. Keep project visuals small and preserve the surrounding research styling.
 - Replace `assets/cv/Aram_Bagdasarian_CV.pdf` to update every CV link without changing its address.
 - The public CV's editable source is `cv-source/Aram_Bagdasarian_CV.tex`. Compile with XeLaTeX into a temporary directory, inspect the PDF, then copy it to the stable asset path. The site build does not require LaTeX.
 - Edit `_layouts/default.html` for the plain-text email displayed in the header. Keep it out of the navigation and footer.
@@ -74,4 +75,4 @@ The update check creates synthetic posts in a temporary copy outside the reposit
 
 Commit the intended public files and push to `main`. The **Build and deploy site** workflow validates the generated output before deploying. Pull requests build without deploying. GitHub Pages must use **GitHub Actions** as its publishing source under **Settings > Pages**.
 
-No analytics, external font services, or client-side JavaScript are required.
+No analytics or external font services are used. The core site works without JavaScript; a small script on the Research page adds animation playback to the static project preview.

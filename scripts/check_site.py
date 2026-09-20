@@ -26,7 +26,9 @@ class Page(HTMLParser):
             self.description = bool(attrs.get("content"))
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonical = attrs.get("href")
-        if tag in ("a", "link", "img", "script", "source"):
+        if tag == "video" and attrs.get("poster"):
+            self.links.append(attrs["poster"])
+        if tag in ("a", "link", "img", "script", "source", "video"):
             value = attrs.get("href") if tag in ("a", "link") else attrs.get("src")
             if value is not None:
                 self.links.append(value)
@@ -65,7 +67,7 @@ def check(root, origin, baseurl):
                 assert unquote(parsed.fragment) in pages[target].ids, f'Missing anchor: {href}'
     for path in root.rglob("*"):
         if path.is_file():
-            assert path.suffix in {".html", ".css", ".svg", ".jpg", ".jpeg", ".png", ".webp", ".pdf", ".xml", ".txt"}, f'Unexpected output: {path}'
+            assert path.suffix in {".html", ".css", ".js", ".mp4", ".svg", ".jpg", ".jpeg", ".png", ".webp", ".pdf", ".xml", ".txt"}, f'Unexpected output: {path}'
     cv = root / "assets/cv/Aram_Bagdasarian_CV.pdf"
     assert cv.read_bytes().startswith(b"%PDF-"), "Missing or invalid CV"
     for name in ("sitemap.xml", "feed.xml", "robots.txt"):

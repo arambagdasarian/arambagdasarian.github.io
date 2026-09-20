@@ -3,6 +3,9 @@
   venue: "Trustworthy AI for Good (AI4GOOD) Workshop, ICML"
   year: 2026
   url: "https://openreview.net/forum?id=T9CoKxEx3X"
+  visual:
+    video: "/assets/video/cot-audit.mp4"
+    poster: "/assets/images/cot-audit.webp"
 - title: "E-Values under Hidden Multiplicity: The Θ(N) Cost of Selection and the logN Price of Disclosure."
   authors: "Bagdasarian, A."
   status: "under_review"
