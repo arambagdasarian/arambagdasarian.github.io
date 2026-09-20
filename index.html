@@ -2,8 +2,8 @@
 home: true
 ---
 <section class="about" aria-label="About me">
-  <p>I am a senior at Harvard University studying Statistics and Government, with an expected graduation date of May 2027. My interests include causal inference, partial identification, and the evaluation of language models.</p>
-  <p>I am interested in how we can draw reliable conclusions when language models are used to measure social phenomena and their errors change across settings or model versions.</p>
+  <p>I am a senior at Harvard University studying Statistics and Government, with an expected graduation date of May 2027. I am interested in causal inference, graph theory and network analysis, partial identification, and the evaluation of language models.</p>
+  <p>I explore ways in which we can make reliable and sustainable conclusions when language models are used to measure text, as their errors and validity change over settings or model versions.</p>
 </section>
 
 <section id="research" aria-labelledby="research-heading">
@@ -14,14 +14,14 @@ home: true
     {% for paper in site.data.research %}
     <li>
       <h4><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h4>
-      <p>{{ paper.authors | escape }}</p>
+      <p>{{ paper.authors | escape | replace: "Aram Bagdasarian", "<strong>Aram Bagdasarian</strong>" }}</p>
       <p class="research-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
     </li>
     {% endfor %}
   </ul>
   {% endif %}
   <h3 class="subheading">Current work</h3>
-  <p>At Harvard, I work with Guilherme Duarte on partial identification and automated causal bounds. I also work with Melani Cammett on a meta-analysis of the political economy of war, using language models to assist with screening research articles.</p>
+  <p>At Harvard, I work with Professor Guilherme Duarte on partial identification and sensitivity analysis. I also work with Professor Melani Cammett and Marko Kljajić on meta-analysis of the political economy of war. I also work with Professor Lisa Nickerson and Dr. You (Lily) Cheng on benchmarking neuroimaging foundation models at Kempner Institute (Applied Neuroimaging Statistics Lab).</p>
 </section>
 
 {% if site.posts.size > 0 %}
