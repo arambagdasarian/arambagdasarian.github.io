@@ -1,62 +1,222 @@
-% Public CV. Compile with XeLaTeX; the application CV is maintained separately.
-\documentclass[10pt]{article}
-\usepackage[letterpaper,top=0.65in,bottom=0.65in,left=0.75in,right=0.75in]{geometry}
+% Aram Bagdasarian - Academic CV (PhD applications, Fall 2026 cycle)
+% Compile with XeLaTeX. Tight left-aligned style; Times New Roman; hyperlinks in sampled navy #020825.
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,top=0.6in,bottom=0.6in,left=0.7in,right=0.7in]{geometry}
 \usepackage{fontspec}
-\usepackage[hidelinks]{hyperref}
-\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{Times New Roman}}
-\hypersetup{pdftitle={Aram Bagdasarian - Curriculum Vitae},pdfauthor={Aram Bagdasarian}}
-\pagestyle{empty}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\definecolor{LinkNavy}{HTML}{020825}
+\usepackage[colorlinks=true,allcolors=LinkNavy]{hyperref}
+
+\setmainfont{Times New Roman}
+\hypersetup{pdftitle={Aram Bagdasarian | Curriculum Vitae},pdfauthor={Aram Bagdasarian}}
+
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-\emergencystretch=2em
-\newcommand{\cvsection}[1]{\vspace{5pt}{\large\bfseries #1}\par\vspace{3pt}\hrule\vspace{5pt}}
-\newcommand{\entry}[4]{\textbf{#1}\hfill #2\par\vspace{-3pt}\textit{#3}\par\vspace{-2pt}#4\par\vspace{2pt}}
+\setlength{\parskip}{0pt}
+\linespread{1.00}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small Bagdasarian\enspace\thepage}
+\setlength{\footskip}{19pt}
+\raggedbottom
+\emergencystretch=3em
+
+% ---- left-aligned section header with a full-width rule beneath ----
+\newcommand{\cvsection}[2][6\baselineskip]{%
+  \Needspace{#1}%
+  \vspace{5pt}%
+  {\large\bfseries #2}\par
+  \vspace{1pt}\hrule height 0.6pt \vspace{3pt}}
+
+% ---- entry: bold org (left) / bold dates (right); italic role (left) / italic location (right) ----
+\newcommand{\cventry}[5][5\baselineskip]{%
+  \Needspace{#1}%
+  \vspace{2pt}%
+  {\textbf{#2}\hfill\textbf{#3}\par}%
+  {\textit{#4}\hfill\textit{#5}\par}%
+}
+
+% ---- tight bullet list ----
+\newlist{tight}{itemize}{1}
+\setlist[tight]{leftmargin=1.4em,itemsep=0.8pt,topsep=1pt,parsep=0pt,label=\textbullet,
+  before=\vspace{1pt}}
+
+% ---- verified links (edit here as URLs arrive) ----
+\newcommand{\lnDuarte}{https://duarteguilherme.github.io/}
+\newcommand{\lnCammett}{https://sites.harvard.edu/melanicammett}
+\newcommand{\lnZois}{https://www.zois-berlin.de/en/}
+\newcommand{\lnKempner}{https://kempnerinstitute.harvard.edu/}
+\newcommand{\lnNickerson}{https://mbb.harvard.edu/people/lisa-nickerson}
+\newcommand{\lnCID}{https://www.hks.harvard.edu/centers/cid}
+\newcommand{\lnCBA}{https://www.cba.am/en/}
+\newcommand{\lnAUA}{https://aua.am/}
+\newcommand{\lnMadoyan}{https://profiles.aua.am/user/hmadoyan/}
+\newcommand{\lnGitHub}{https://github.com/arambagdasarian}
+\newcommand{\lnSite}{https://arambagdasarian.github.io/}
+\newcommand{\lnScholar}{https://scholar.google.com/citations?user=Gbhs4TcAAAAJ}
+\newcommand{\lnCheng}{https://lilianyou.github.io/}
+\newcommand{\lnTeevial}{https://teevial.org}
+\newcommand{\lnICML}{https://openreview.net/forum?id=T9CoKxEx3X}
+\newcommand{\lnNYT}{https://www.nytimes.com/2026/05/09/us/college-boxing-harvard.html}
+\newcommand{\lnFox}{https://x.com/foxandfriends/status/2060728811256164437}
+\newcommand{\lnANSR}{https://ansr-laboratory.github.io/opportunity/student-ra/}
+\newcommand{\lnOrbegozo}{https://www.iq.harvard.edu/people/german-orbegozo-rodriguez}
+\newcommand{\lnSparse}{https://my.harvard.edu/course/STAT236/2026-Fall/}
+\newcommand{\lnHarvard}{https://www.harvard.edu/}
+\newcommand{\lnGovernment}{https://www.gov.harvard.edu/}
+\newcommand{\lnIOP}{https://iop.harvard.edu/internships-and-careers/directors-internship}
+\newcommand{\lnURAF}{https://uraf.harvard.edu/conference-funding}
+\newcommand{\lnBoxing}{https://soco.college.harvard.edu/257781/leadership-team/}
+\newcommand{\lnAPRI}{https://apri.institute/}
+
 \begin{document}
-\fontsize{10.5pt}{12pt}\selectfont
-{\centering {\LARGE Aram Bagdasarian}\par
-\href{mailto:abagdasarian@college.harvard.edu}{abagdasarian@college.harvard.edu}\quad\textbullet\quad
-\href{https://arambagdasarian.github.io}{arambagdasarian.github.io}\par}
+\thispagestyle{empty}
+\raggedright
 
+% ===================== HEADER =====================
+{\centering
+  {\huge\bfseries Aram Bagdasarian}\par
+  \vspace{3pt}
+  {\href{\lnSite}{arambagdasarian.github.io} \quad|\quad
+   \href{\lnScholar}{Google Scholar} \quad|\quad
+   \href{\lnGitHub}{GitHub} \quad|\quad
+   \href{mailto:abagdasarian@college.harvard.edu}{abagdasarian@college.harvard.edu}}\par
+}
+% ===================== EDUCATION =====================
 \cvsection{Education}
-\textbf{Harvard University}\hfill Expected May 2027\par
-A.B. in Statistics and Government, double concentration\par
-Coursework includes probability, statistical inference, causal inference, linear models, data science, statistics of networks, multivariable calculus, and linear algebra.
+\cventry{\href{\lnHarvard}{Harvard University}}{Expected May 2027}
+        {A.B. in Statistics and Government (double concentration)}{Cambridge, MA}
+{\small\textbf{Graduate coursework:} Causal Inference with Applications (Imai); Data Science I;\par
+\href{\lnSparse}{Sparse Inference, and Network and Text Analysis}.\par}
+{\small\textbf{Undergraduate coursework:} Probability; Statistical Inference; Statistics and Data Science of Networks;\par
+Data Science II; Multivariable Calculus; Linear Algebra; Linear Models.\par}
 
-\cvsection{Research Interests}
-Causal inference, partial identification, language model evaluation, and reliable measurement in quantitative social science.
-
-\cvsection{Workshop Paper}
-Ali Saffarini and \textbf{Aram Bagdasarian}. ``Auditing Chain-of-Thought Faithfulness for Trustworthy AI: A Reproducible Corruption-Probe Protocol Across Eleven Frontier LLMs.'' \textit{Trustworthy AI for Good (AI4GOOD) Workshop, ICML 2026}. \href{https://openreview.net/forum?id=T9CoKxEx3X}{OpenReview}.
-
+% ===================== RESEARCH EXPERIENCE =====================
 \cvsection{Research Experience}
-\entry{Harvard University, Department of Government}{Aug 2026 - Present}
-{Research Assistant to Guilherme Duarte}
-{Work on partial identification and automated causal bounds using \texttt{autobounds}.}
-\entry{Harvard University, Department of Government}{Feb 2026 - Present}
-{Research Assistant to Melani Cammett}
-{Built an LLM-assisted article-screening pipeline for a meta-analysis of the political economy of war; worked on data cleaning and effect-size coding.}
-\entry{ZOiS, Centre for East European and International Studies}{May 2025 - Present}
-{Data Science Research Intern, Berlin}
-{Collected Russian-language documents and used text-as-data methods and social network analysis to study Russia's brokerage networks.}
-\entry{Kempner Institute, Harvard University}{Aug 2026 - Present}
-{Kure Research Fellow}
-{Benchmark foundation models for neuroimaging against conventional baselines.}
-\entry{Harvard Center for International Development}{Sep 2025 - May 2026}
-{Student Research Scholar}
-{Built an audio and visual processing pipeline to classify TikTok content for media-diet measurement.}
-\entry{Central Bank of Armenia}{Sep 2024 - Jan 2025}
-{Research Associate}
-{Benchmarked the Bank's research standards against those of other central banks.}
+\cventry{\href{\lnGovernment}{Harvard University, Department of Government}}{Aug 2026 -- Present}
+        {Research Assistant to \href{\lnDuarte}{Prof. Guilherme Duarte}}{Cambridge, MA}
+\begin{tight}
+  \item Study methods for sensitivity analysis, partial identification, and automated causal bounds.
+  \item Explore treatment-effect identification when judge-assignment designs violate monotonicity.
+\end{tight}
 
+\cventry{\href{\lnANSR}{Applied Neuroimaging Statistics Lab, McLean Hospital}}{Aug 2026 -- Present}
+        {Kure Research Fellow, \href{\lnKempner}{Kempner Institute, Harvard University}}{Belmont, MA}
+{\textit{Supervisors: \href{\lnNickerson}{Dr. Lisa Nickerson} and \href{\lnCheng}{Dr. You (Lily) Cheng}}\par}
+\begin{tight}
+  \item Plan a benchmark of frozen BrainLM embeddings for phenotype prediction from HCP functional MRI.
+  \item Proposed design covers phenotype curation, confounds, and baseline comparisons across sample sizes.
+\end{tight}
+
+\cventry{\href{\lnGovernment}{Harvard University, Department of Government}}{Feb 2026 -- Present}
+        {Research Assistant to \href{\lnCammett}{Prof. Melani Cammett} (with Marko Kljajić)}{Cambridge, MA}
+\begin{tight}
+  \item Built a two-model LLM pipeline that screened 11{,}687 titles and abstracts on the political economy of war.
+  \item Designed validation on 304 triple-coded review records; model-human agreement $\kappa = 0.705$--$0.734$.
+  \item Built an OpenAlex citation-chasing pipeline across 337 reviews, identifying 34 new candidate studies.
+\end{tight}
+
+\cventry{\href{\lnZois}{ZOiS, Centre for East European and International Studies}}{May 2025 -- Present}
+        {Researcher}{Berlin, Germany}
+\begin{tight}
+  \item Scraped 47{,}000+ Russian-language documents and built an NLP pipeline mapping 1{,}000+ actors.
+  \item Analyzed centrality and communities in Russia's adaptation networks across four periods (2010--2025).
+  \item Tested sensitivity to media sources using a corpus restricted to TASS and RIA Novosti.
+  \item Extended the workflow to six actor corpora comprising 528{,}836 article records.
+  \item Produced 50 figures and 40 ranking tables across four completed network-analysis cases.
+\end{tight}
+
+\cventry{\href{\lnAPRI}{APRI Armenia}}{May -- Aug 2026}
+        {Research Intern}{Yerevan, Armenia}
+\begin{tight}
+  \item Archived 535{,}000+ full-text articles from three news outlets using a resumable Python crawler.
+  \item Designed coverage-share measures and an LLM pipeline scoring 1{,}495 articles on five rhetorical dimensions.
+  \item Corrected a parser defect affecting 351{,}800 articles and reran analyses to remove inflated keyword counts.
+  \item Built an internal application for multilingual archive search and on-demand narrative analysis.
+\end{tight}
+
+\cventry{\href{\lnCID}{Harvard Center for International Development}}{Sep 2025 -- May 2026}
+        {Student Research Scholar}{Cambridge, MA}
+{\textit{Collaborator: \href{\lnOrbegozo}{Germán David Orbegozo-Rodríguez}}\par}
+\begin{tight}
+  \item Built a TikTok scraper and analysis pipeline that collected and processed 200{,}000+ videos.
+  \item Automated OCR, sentiment analysis, and Whisper transcription across the full video corpus.
+\end{tight}
+
+\cventry[3.5\baselineskip]{\href{\lnCBA}{Central Bank of Armenia}}{Sep 2024 -- Jan 2025}
+        {Research Associate}{Remote}
+\begin{tight}
+  \item Compared 13 research quality-assurance methods across approximately five central banks.
+\end{tight}
+
+% ===================== PUBLICATIONS =====================
+\cvsection[5\baselineskip]{Workshop Papers}
+\begin{tight}
+  \item Saffarini, A., \& \textbf{Bagdasarian, A.} (2026).
+        \href{\lnICML}{``Auditing Chain-of-Thought Faithfulness for Trustworthy AI: A Reproducible
+        Corruption-Probe Protocol Across Eleven Frontier LLMs.''}
+        \textit{Trustworthy AI for Good (AI4GOOD) Workshop, ICML, 2026}. Poster presentation, Seoul, South Korea.
+\end{tight}
+
+% ===================== SUBMISSIONS =====================
+\cvsection{Work Under Review}
+\begin{tight}
+  \item \textbf{Bagdasarian, A.} ``E-Values under Hidden Multiplicity: The $\Theta(N)$ Cost of Selection
+        and the $\log N$ Price of Disclosure.'' \textit{Under review, E-Values Workshop, NeurIPS 2026.}
+  \item Hoppe, S., Filippova, A., \& \textbf{Bagdasarian, A.} ``Brokered Global Engagement Through
+        Patronal Repurposing: Evolution and Structure of Russia's Adaptation Networks.''
+        \textit{Under review.}
+\end{tight}
+
+% ===================== RESEARCH IN PROGRESS =====================
+\cvsection{Work in Progress}
+\begin{tight}
+  \item \textbf{Bagdasarian, A.} Adapting psychometric test-equating to separate real social change from
+        language-model version drift when a construct is tracked over time.
+  \item \textbf{Bagdasarian, A.} Detecting coordinated and AI-generated comment campaigns in rulemaking records at scale.
+\end{tight}
+
+% ===================== TEACHING =====================
 \cvsection{Teaching}
-\textbf{American University of Armenia}\hfill Summer 2026\par
-Teaching Assistant, CS 252, Data Science. Led lab sections and office hours and supported assignments.
+\cventry{\href{\lnAUA}{American University of Armenia}}{Summer 2026}
+        {Teaching Assistant, CS 252: Data Science (\href{\lnMadoyan}{Prof. Habet Madoyan})}{Yerevan, Armenia}
+\begin{tight}
+  \item Taught 30 students and developed six in-class labs for a 20-session undergraduate data science course.
+  \item Held weekly office hours and graded assignments and labs.
+\end{tight}
 
-\cvsection{Leadership}
-\textbf{Teevial}, Founder\hfill Jan 2025 - Present\par
-Founded a data-focused youth organization in Armenia.\par
-\textbf{Harvard Boxing Club}, President\hfill Aug 2025 - May 2026
+% ===================== AWARDS =====================
+\cvsection{Awards \& Fellowships}
+\begin{tight}
+  \item \textbf{\href{\lnKempner}{Kure Research Fellowship}}, Kempner Institute, Harvard University (2026).
+  \item \textbf{\href{\lnURAF}{URAF Conference Funding}}, Harvard University (2024, 2025, 2026).
+  \item \textbf{\href{\lnIOP}{IOP Director's Internship}}, Harvard University (2024).
+\end{tight}
 
-\cvsection{Technical Skills}
-Python, R, SQL, Stata, LaTeX, and Git. Tools include PyTorch, scikit-learn, spaCy, NetworkX, and \texttt{autobounds}.
+% ===================== LEADERSHIP =====================
+\cvsection{Leadership \& Service}
+\cventry{\href{\lnTeevial}{Teevial}}{Jan 2025 -- Present}{Founder}{Armenia / Hybrid}
+\begin{tight}
+  \item Founded a youth research NGO in Armenia with 100+ members.
+  \item Recruited and supervised over 10 university students conducting quantitative research on Armenian issues.
+  \item Secured \$10{,}000+ in grants to support research travel, lodging, and technical resources.
+\end{tight}
+\cventry{\href{\lnBoxing}{Harvard Boxing Club}}{Aug 2025 -- May 2026}{President}{Cambridge, MA}
+\begin{tight}
+  \item Grew membership by 200; club featured in \href{\lnNYT}{\textit{The New York Times}} and \href{\lnFox}{Fox News' \textit{Fox \& Friends}}.
+  \item Organized Fight Night featuring 20 boxers and mentored participants through preparation.
+\end{tight}
+{\textbf{Additional service:} Student Ambassador, \href{\lnCID}{Harvard Center for International Development} (2025--2026).\par}
+
+% ===================== SKILLS =====================
+\cvsection{Skills \& Languages}
+{\textbf{Methods:} statistical inference, LLM validation and auditing, text-as-data (NLP), network analysis.\par}
+{\textbf{Programming:} Python, R, SQL, Stata, LaTeX, Git; PyTorch, scikit-learn, spaCy, NetworkX.\par}
+{\textbf{Languages:} Armenian (native), Russian (advanced), French (upper-intermediate).\par}
+
 \end{document}
