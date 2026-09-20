@@ -13,14 +13,28 @@ home: true
 
 <section id="research" aria-labelledby="research-heading">
   <h2 id="research-heading">Research</h2>
-  {% if site.data.research.size > 0 %}
+  {% assign workshop_papers = site.data.research | where_exp: "paper", "paper.status != 'under_review'" %}
+  {% if workshop_papers.size > 0 %}
   <h3 class="subheading">Workshop papers</h3>
   <ul class="research-list">
-    {% for paper in site.data.research %}
+    {% for paper in workshop_papers %}
     <li>
       <h4><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h4>
       <p>{{ paper.authors | escape | replace: "Aram Bagdasarian", "<strong>Aram Bagdasarian</strong>" }}</p>
       <p class="research-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% assign under_review_papers = site.data.research | where: "status", "under_review" %}
+  {% if under_review_papers.size > 0 %}
+  <h3 class="subheading">Work under review</h3>
+  <ul class="research-list">
+    {% for paper in under_review_papers %}
+    <li>
+      <h4>{% if paper.url %}<a href="{{ paper.url }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h4>
+      <p>{{ paper.authors | escape | replace: "Aram Bagdasarian", "<strong>Aram Bagdasarian</strong>" | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
+      <p class="research-venue">Under review, {{ paper.venue | escape }} {{ paper.year }}.</p>
     </li>
     {% endfor %}
   </ul>

@@ -37,7 +37,7 @@ For site links in posts, use Jekyll's URL filter, for example `[CV]({{ site.cv_p
 ## Edit the profile, research, or CV
 
 - Edit `index.html` for the introduction and current work.
-- Edit `_data/research.yml` for workshop papers. Add a separate category and template section when adding other types of work.
+- Edit `_data/research.yml` for research entries. Use `status: "under_review"` for submissions displayed under Work under review; entries without this status appear under Workshop papers. URLs are optional for work under review.
 - Replace `assets/cv/Aram_Bagdasarian_CV.pdf` to update every CV link without changing its address.
 - The public CV's editable source is `cv-source/Aram_Bagdasarian_CV.tex`. Compile with XeLaTeX into a temporary directory, inspect the PDF, then copy it to the stable asset path. The site build does not require LaTeX.
 - Edit `_layouts/default.html` for the plain-text email displayed in the header. Keep it out of the navigation and footer.
