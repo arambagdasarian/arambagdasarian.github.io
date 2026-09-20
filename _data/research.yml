@@ -12,6 +12,12 @@
 - title: "Brokered Global Engagement Through Patronal Repurposing: Evolution and Structure of Russia’s Adaptation Networks."
   authors: "Hoppe, S., Filippova, A., & Bagdasarian, A."
   status: "under_review"
+  visual:
+    video: "/assets/video/trajectory-comparison.mp4"
+    poster: "/assets/images/trajectory-network.webp"
+    style: "network"
+    width: 720
+    height: 540
 - title: "Detecting coordinated and AI-generated comment campaigns in government rulemaking records at scale."
   authors: "Bagdasarian, A."
   status: "in_progress"

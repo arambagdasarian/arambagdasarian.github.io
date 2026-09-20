@@ -26,12 +26,15 @@ research_visuals: true
   <h2 class="subheading">Work under review</h2>
   <ul class="research-list">
     {% for paper in under_review_papers %}
-    <li>
-      <h3>{% if paper.url %}<a href="{{ paper.url }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
-      {% if paper.authors %}
-      <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
-      {% endif %}
-      <p class="research-venue">Under review{% if paper.venue %}, {{ paper.venue | escape }}{% endif %}{% if paper.year %} {{ paper.year }}{% endif %}.</p>
+    <li{% if paper.visual %} class="research-item--visual{% if paper.visual.style == 'network' %} research-item--network{% endif %}"{% endif %}>
+      <div class="research-copy">
+        <h3>{% if paper.url %}<a href="{{ paper.url }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
+        {% if paper.authors %}
+        <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
+        {% endif %}
+        <p class="research-venue">Under review{% if paper.venue %}, {{ paper.venue | escape }}{% endif %}{% if paper.year %} {{ paper.year }}{% endif %}.</p>
+      </div>
+      {% if paper.visual %}{% include research-visual.html paper=paper %}{% endif %}
     </li>
     {% endfor %}
   </ul>
