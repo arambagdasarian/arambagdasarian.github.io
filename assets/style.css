@@ -47,9 +47,11 @@ h2 { font-size: 1.32rem; margin: 0 0 18px; font-weight: 400; }
 .research-item--visual { display: grid; grid-template-columns: minmax(0, 1fr) 184px; gap: 24px; align-items: start; }
 .research-visual { position: relative; display: block; width: 184px; line-height: 0; border-radius: 4px; text-decoration: none; }
 .research-visual video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid #e5e5e5; border-radius: 4px; background: #f7f6f2; }
-.research-item--network { grid-template-columns: minmax(0, 1fr) 232px; }
-.research-visual--network { width: 232px; }
-.research-visual--network video { border-color: transparent; background: #fff; }
+.research-item--network, .research-item--diagram { grid-template-columns: minmax(0, 1fr) 232px; }
+.research-visual--network, .research-visual--diagram { width: 232px; }
+.research-visual--network video, .research-visual--diagram video { border-color: transparent; background: #fff; }
+.research-visual-poster { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border-radius: 4px; object-fit: cover; pointer-events: none; }
+.research-visual.is-playing .research-visual-poster { visibility: hidden; }
 .research-visual-title { position: absolute; right: 0; bottom: calc(100% + 10px); z-index: 2; width: 290px; max-width: calc(100vw - 40px); padding: 12px 14px; color: #fff; background: var(--ink); border-radius: 4px; font-size: .78rem; line-height: 1.5; opacity: 0; visibility: hidden; transition: opacity .15s ease; }
 .research-visual-title::after { content: ""; position: absolute; top: 100%; right: 22px; border: 6px solid transparent; border-top-color: var(--ink); }
 .research-visual-title::before { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 10px; }
@@ -62,6 +64,7 @@ h2 { font-size: 1.32rem; margin: 0 0 18px; font-weight: 400; }
 .research-video-close { min-height: 44px; padding: 8px 12px; border: 0; background: #fff; color: inherit; font: inherit; font-size: .9rem; text-decoration: underline; text-underline-offset: .17em; cursor: pointer; }
 .research-video-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .research-video-dialog h2 { margin: 0 0 16px; font-size: 1rem; line-height: 1.5; }
+.research-video-caption { font-size: .9rem; line-height: 1.55; margin: 0 0 16px; }
 .research-player { display: block; width: 100%; height: auto; max-height: 65dvh; object-fit: contain; background: #fff; }
 @media (max-width: 600px) {
   .research-item--visual { grid-template-columns: minmax(0, 1fr); gap: 16px; }

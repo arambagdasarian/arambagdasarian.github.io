@@ -47,8 +47,13 @@
         video.play().catch(() => {});
       } else {
         video.pause();
+        preview.classList.remove('is-playing');
       }
     };
+    video.addEventListener('playing', () => {
+      if (!video.paused) preview.classList.add('is-playing');
+    });
+    video.addEventListener('pause', () => preview.classList.remove('is-playing'));
     const activate = (restart = false) => {
       dismissed = false;
       preview.classList.remove('is-dismissed');
@@ -71,6 +76,12 @@
         event.preventDefault();
         dismiss();
         dialog.querySelector('#research-video-title').textContent = preview.getAttribute('aria-label');
+        const caption = dialog.querySelector('#research-video-caption');
+        caption.textContent = preview.dataset.videoCaption || '';
+        caption.hidden = !caption.textContent;
+        if (caption.textContent) dialog.setAttribute('aria-describedby', caption.id);
+        else dialog.removeAttribute('aria-describedby');
+        player.setAttribute('aria-label', preview.getAttribute('aria-label'));
         player.poster = video.poster;
         player.src = video.querySelector('source').src;
         returnToPreview = () => {

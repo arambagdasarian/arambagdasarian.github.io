@@ -4,8 +4,16 @@
   year: 2026
   url: "https://openreview.net/forum?id=T9CoKxEx3X"
   visual:
-    video: "/assets/video/cot-audit.mp4"
-    poster: "/assets/images/cot-audit.webp"
+    video: "/assets/video/cot-audit.mp4?v=2"
+    poster: "/assets/images/cot-audit.webp?v=2"
+    page: "/research/chain-of-thought/"
+    caption: "A store sells notebooks for $4 each and pens for $2 each. Sarah buys 3 notebooks and 5 pens. She pays with a $50 bill. How much change does she receive?"
+    preload: "auto"
+    restart_on_hover: true
+    style: "diagram"
+    static_poster: true
+    width: 720
+    height: 540
 - title: "Adapting psychometric test-equating to separate real social change from language-model version drift when a construct is tracked over time."
   authors: "Bagdasarian, A."
   status: "in_progress"

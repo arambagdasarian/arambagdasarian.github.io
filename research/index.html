@@ -10,7 +10,7 @@ research_visuals: true
   <h2 class="subheading">Workshop papers</h2>
   <ul class="research-list">
     {% for paper in workshop_papers %}
-    <li{% if paper.visual %} class="research-item--visual"{% endif %}>
+    <li{% if paper.visual %} class="research-item--visual{% if paper.visual.style %} research-item--{{ paper.visual.style | escape }}{% endif %}"{% endif %}>
       <div class="research-copy">
         <h3><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h3>
         <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
@@ -26,7 +26,7 @@ research_visuals: true
   <h2 class="subheading">Work under review</h2>
   <ul class="research-list">
     {% for paper in under_review_papers %}
-    <li{% if paper.visual %} class="research-item--visual{% if paper.visual.style == 'network' %} research-item--network{% endif %}"{% endif %}>
+    <li{% if paper.visual %} class="research-item--visual{% if paper.visual.style %} research-item--{{ paper.visual.style | escape }}{% endif %}"{% endif %}>
       <div class="research-copy">
         <h3>{% if paper.url %}<a href="{{ paper.url }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
         {% if paper.authors %}
@@ -60,5 +60,6 @@ research_visuals: true
     <button class="research-video-close" autofocus>Back to research</button>
   </form>
   <h2 id="research-video-title"></h2>
+  <p id="research-video-caption" class="research-video-caption" hidden></p>
   <video class="research-player" controls muted playsinline loop preload="none"></video>
 </dialog>
