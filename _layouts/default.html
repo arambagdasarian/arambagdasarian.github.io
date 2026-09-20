@@ -29,7 +29,7 @@
       {% endif %}
       <p class="contact-email">abagdasarian at college dot harvard dot edu</p>
       <nav aria-label="Main navigation">
-        <a href="{{ '/' | relative_url }}#research">Research</a>
+        <a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a>
         <a href="{{ '/updates/' | relative_url }}"{% if page.url == '/updates/' %} aria-current="page"{% endif %}>Updates</a>
         <a href="{{ site.cv_path | relative_url }}">CV (PDF)</a>
       </nav>

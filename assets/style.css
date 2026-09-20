@@ -40,7 +40,7 @@ h2 { font-size: 1.32rem; margin: 0 0 18px; font-weight: 400; }
 .subheading { font-size: 1rem; margin: 24px 0 14px; font-weight: 700; }
 .research-list { list-style: none; padding: 0; margin: 0; }
 .research-list li { margin: 0 0 23px; }
-.research-list h4 { font-size: 1rem; font-weight: 400; line-height: 1.55; margin: 0 0 6px; }
+.research-list h3 { font-size: 1rem; font-weight: 400; line-height: 1.55; margin: 0 0 6px; }
 .research-list p { margin: 0; font-size: .94rem; }
 .research-venue { color: var(--muted); font-style: italic; }
 .update-list { list-style: none; padding: 0; margin: 20px 0 0; }
