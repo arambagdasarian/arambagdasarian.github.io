@@ -37,7 +37,7 @@ For site links in posts, use Jekyll's URL filter, for example `[CV]({{ site.cv_p
 ## Edit the profile, research, or CV
 
 - Edit `index.html` for the homepage introduction, Current work, and Outside Harvard. The separate Research page is `research/index.html`, published at `/research/`.
-- Edit `_data/research.yml` for research entries. Use `status: "under_review"` for submissions displayed under Work under review; entries without this status appear under Workshop papers. Venue, year, and URL are optional for work under review. Omit venue details from the data when they should not be public.
+- Edit `_data/research.yml` for research entries. Use `status: "under_review"` for submissions displayed under Work under review; entries without this status appear under Workshop papers. Venue, year, and URL are optional for work under review. Omit venue details from the data when they should not be public. Format every author list with surnames and initials, retaining the supplied author order and using an ampersand before the final author. The template bolds `Bagdasarian, A.`.
 - Replace `assets/cv/Aram_Bagdasarian_CV.pdf` to update every CV link without changing its address.
 - The public CV's editable source is `cv-source/Aram_Bagdasarian_CV.tex`. Compile with XeLaTeX into a temporary directory, inspect the PDF, then copy it to the stable asset path. The site build does not require LaTeX.
 - Edit `_layouts/default.html` for the plain-text email displayed in the header. Keep it out of the navigation and footer.

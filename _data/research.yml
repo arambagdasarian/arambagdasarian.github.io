@@ -1,5 +1,5 @@
 - title: "Auditing Chain-of-Thought Faithfulness for Trustworthy AI: A Reproducible Corruption-Probe Protocol Across Eleven Frontier LLMs"
-  authors: "Ali Saffarini and Aram Bagdasarian"
+  authors: "Saffarini, A., & Bagdasarian, A."
   venue: "Trustworthy AI for Good (AI4GOOD) Workshop, ICML"
   year: 2026
   url: "https://openreview.net/forum?id=T9CoKxEx3X"
@@ -12,5 +12,5 @@
   authors: "Hoppe, S., Filippova, A., & Bagdasarian, A."
   status: "under_review"
 - title: "When Copies Count: Auditing AI Detection in Public Comments"
-  authors: "Aram Bagdasarian"
+  authors: "Bagdasarian, A."
   status: "under_review"
