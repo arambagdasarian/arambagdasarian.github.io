@@ -46,6 +46,12 @@ For site links in posts, use Jekyll's URL filter, for example `[CV]({{ site.cv_p
 - Edit `_layouts/default.html` for the plain-text email displayed in the header. Keep it out of the navigation and footer.
 - Edit `_config.yml` for the site description, profile links (`github_url`, `google_scholar_url`, and `orcid_url`), and hosting URL. `baseurl` is empty because this is an account site.
 
+## Google Search
+
+The homepage includes `WebSite`, `ProfilePage`, and `Person` structured data identifying Aram Bagdasarian and linking the existing GitHub, Google Scholar, and ORCID profiles. The description uses the opening sentence supplied for the homepage. Canonical URLs, crawlable HTML, `robots.txt`, and the generated `sitemap.xml` support discovery. No logo or favicon is added.
+
+To set up Search Console, add `https://arambagdasarian.github.io/` as a URL-prefix property and choose HTML-tag verification. Copy only the tag's `content` value into `google_site_verification` in `_config.yml`, publish, then click Verify in Search Console. Submit `sitemap.xml` and use URL Inspection to request indexing of the homepage. Keep the verification value in place after verification. Google controls indexing and ranking; publishing or submitting a request does not guarantee either.
+
 ## Preview locally
 
 Use Ruby 3.4.10, Bundler, and Python 3. On this Mac, Homebrew Ruby is installed at `/opt/homebrew/opt/ruby@3.4/bin`. Run these exports in the terminal first; the Xcode setting selects the compiler needed when installing native gems.

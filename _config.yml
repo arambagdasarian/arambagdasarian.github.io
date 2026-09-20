@@ -1,7 +1,6 @@
 title: Aram Bagdasarian
 description: >-
-  Aram Bagdasarian is a Harvard undergraduate studying Statistics and Government,
-  with interests in causal inference, partial identification, and language model evaluation.
+  I am a senior at Harvard University studying Statistics and Government, with an expected graduation date of May 2027.
 url: "https://arambagdasarian.github.io"
 baseurl: ""
 lang: en-US
@@ -11,6 +10,7 @@ github_url: https://github.com/arambagdasarian
 google_scholar_url: "https://scholar.google.com/citations?user=Gbhs4TcAAAAJ&hl=en"
 orcid_url: https://orcid.org/0009-0003-6343-8800
 cv_path: /assets/cv/Aram_Bagdasarian_CV.pdf?v=20260920
+google_site_verification: ""
 author:
   name: Aram Bagdasarian
   email: abagdasarian@college.harvard.edu

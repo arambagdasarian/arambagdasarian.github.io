@@ -1,0 +1,34 @@
+{% assign home_url = '/' | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ home_url | append: '#website' | jsonify }},
+      "url": {{ home_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "publisher": { "@id": {{ home_url | append: '#person' | jsonify }} }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": {{ home_url | append: '#profile' | jsonify }},
+      "url": {{ home_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "isPartOf": { "@id": {{ home_url | append: '#website' | jsonify }} },
+      "mainEntity": {
+        "@type": "Person",
+        "@id": {{ home_url | append: '#person' | jsonify }},
+        "name": {{ site.author.name | jsonify }},
+        "url": {{ home_url | jsonify }},
+        "description": {{ site.description | normalize_whitespace | jsonify }},
+        "sameAs": [
+          {{ site.github_url | jsonify }},
+          {{ site.google_scholar_url | jsonify }},
+          {{ site.orcid_url | jsonify }}
+        ]
+      }
+    }
+  ]
+}
+</script>
