@@ -24,20 +24,19 @@
       {% if page.home %}
       <img class="portrait" src="{{ '/assets/images/aram-bagdasarian.jpg' | relative_url }}" alt="Aram Bagdasarian" width="448" height="448">
       <h1 class="site-name">{{ site.title }}</h1>
-      <p class="affiliation">Statistics &amp; Government · Harvard University</p>
+      <p class="affiliation">Statistics &amp; Government, Harvard University</p>
       {% else %}
       <a class="site-name home-link" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       {% endif %}
+      <p class="contact-email">abagdasarian at college dot harvard dot edu</p>
       <nav aria-label="Main navigation">
         <a href="{{ '/' | relative_url }}#research">Research</a>
         <a href="{{ '/updates/' | relative_url }}"{% if page.url == '/updates/' %} aria-current="page"{% endif %}>Updates</a>
         <a href="{{ site.cv_path | relative_url }}">CV (PDF)</a>
-        <a href="mailto:{{ site.email }}">Email</a>
       </nav>
     </header>
     <main id="main" tabindex="-1">{{ content }}</main>
     <footer class="site-footer">
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       <a href="{{ site.github_url }}">GitHub</a>
       {% if site.google_scholar_url %}<a href="{{ site.google_scholar_url | escape }}">Google Scholar</a>{% endif %}
       {% if site.orcid_url %}<a href="{{ site.orcid_url }}" rel="me">ORCID</a>{% endif %}

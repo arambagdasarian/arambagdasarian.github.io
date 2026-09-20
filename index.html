@@ -15,7 +15,7 @@ home: true
     <li>
       <h4><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h4>
       <p>{{ paper.authors | escape }}</p>
-      <p class="research-venue">{{ paper.venue | escape }} · {{ paper.year }}</p>
+      <p class="research-venue">{{ paper.venue | escape }}, {{ paper.year }}</p>
     </li>
     {% endfor %}
   </ul>
