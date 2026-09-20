@@ -13,9 +13,11 @@
   authors: "Hoppe, S., Filippova, A., & Bagdasarian, A."
   status: "under_review"
   visual:
-    video: "/assets/video/trajectory-comparison.mp4"
+    video: "/assets/video/trajectory-comparison.mp4?v=2"
     poster: "/assets/images/trajectory-network.webp"
     page: "/research/network/"
+    preload: "auto"
+    restart_on_hover: true
     style: "network"
     width: 720
     height: 540

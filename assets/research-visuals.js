@@ -49,9 +49,12 @@
         video.pause();
       }
     };
-    const activate = () => {
+    const activate = (restart = false) => {
       dismissed = false;
       preview.classList.remove('is-dismissed');
+      if (restart && video.hasAttribute('data-restart-on-hover') && !reducedMotion.matches) {
+        video.currentTime = 0;
+      }
       update();
     };
     const dismiss = () => {
@@ -80,9 +83,9 @@
         player.play().catch(() => {});
       });
     }
-    preview.addEventListener('mouseenter', () => { hovered = true; activate(); });
+    preview.addEventListener('mouseenter', () => { hovered = true; activate(true); });
     preview.addEventListener('mouseleave', () => { hovered = false; update(); });
-    preview.addEventListener('focus', () => { focused = true; activate(); });
+    preview.addEventListener('focus', () => { focused = true; activate(!hovered); });
     preview.addEventListener('blur', () => { focused = false; update(); });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && (hovered || focused)) {
