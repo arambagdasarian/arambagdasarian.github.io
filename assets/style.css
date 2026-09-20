@@ -26,7 +26,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
 .portrait { position: absolute; top: 56px; right: 0; display: block; width: 144px; height: 144px; }
 .affiliation { color: var(--muted); font-size: .94rem; margin: 10px 0 15px; }
 .contact-email { font-size: .94rem; margin: 0 0 15px; }
-.email-address { text-decoration: underline; text-underline-offset: .17em; }
+.email-address { text-decoration: none; }
 nav { display: flex; flex-wrap: wrap; gap: 6px 25px; font-size: .94rem; }
 .site-name + .contact-email { margin-top: 10px; }
 nav a { padding: 3px 0; }
