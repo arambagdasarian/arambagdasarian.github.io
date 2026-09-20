@@ -25,7 +25,7 @@ permalink: /research/
     <li>
       <h3>{% if paper.url %}<a href="{{ paper.url }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
       <p>{{ paper.authors | escape | replace: "Aram Bagdasarian", "<strong>Aram Bagdasarian</strong>" | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
-      <p class="research-venue">Under review, {{ paper.venue | escape }} {{ paper.year }}.</p>
+      <p class="research-venue">Under review{% if paper.venue %}, {{ paper.venue | escape }}{% endif %}{% if paper.year %} {{ paper.year }}{% endif %}.</p>
     </li>
     {% endfor %}
   </ul>
