@@ -27,7 +27,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
 .affiliation { color: var(--muted); font-size: .94rem; margin: 10px 0 15px; }
 .contact-email { font-size: .94rem; margin: 0 0 15px; }
 nav { display: flex; flex-wrap: wrap; gap: 6px 25px; font-size: .94rem; }
-.home-link + .contact-email { margin-top: 10px; }
+.site-name + .contact-email { margin-top: 10px; }
 nav a { padding: 3px 0; }
 nav [aria-current="page"] { text-decoration-thickness: 2px; }
 main { min-height: 180px; }
