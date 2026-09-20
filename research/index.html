@@ -5,7 +5,7 @@ research_visuals: true
 ---
 <section id="research" aria-labelledby="research-heading">
   <h1 id="research-heading">Research</h1>
-  {% assign workshop_papers = site.data.research | where_exp: "paper", "paper.status != 'under_review'" %}
+  {% assign workshop_papers = site.data.research | where_exp: "paper", "paper.status != 'under_review' and paper.status != 'in_progress'" %}
   {% if workshop_papers.size > 0 %}
   <h2 class="subheading">Workshop papers</h2>
   <ul class="research-list">
@@ -32,6 +32,21 @@ research_visuals: true
       <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
       {% endif %}
       <p class="research-venue">Under review{% if paper.venue %}, {{ paper.venue | escape }}{% endif %}{% if paper.year %} {{ paper.year }}{% endif %}.</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% assign in_progress_projects = site.data.research | where: "status", "in_progress" %}
+  {% if in_progress_projects.size > 0 %}
+  <h2 class="subheading">Work in progress</h2>
+  <ul class="research-list">
+    {% for paper in in_progress_projects %}
+    <li>
+      <h3>{{ paper.title | escape }}</h3>
+      {% if paper.authors %}
+      <p>{{ paper.authors | escape | replace: "Bagdasarian, A.", "<strong>Bagdasarian, A.</strong>" }}</p>
+      {% endif %}
+      <p class="research-venue">(In progress.)</p>
     </li>
     {% endfor %}
   </ul>

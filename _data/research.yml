@@ -6,14 +6,12 @@
   visual:
     video: "/assets/video/cot-audit.mp4"
     poster: "/assets/images/cot-audit.webp"
-- title: "E-Values under Hidden Multiplicity: The Θ(N) Cost of Selection and the logN Price of Disclosure."
+- title: "Adapting psychometric test-equating to separate real social change from language-model version drift when a construct is tracked over time."
   authors: "Bagdasarian, A."
-  status: "under_review"
-  venue: "E-Values Workshop, NeurIPS"
-  year: 2026
+  status: "in_progress"
 - title: "Brokered Global Engagement Through Patronal Repurposing: Evolution and Structure of Russia’s Adaptation Networks."
   authors: "Hoppe, S., Filippova, A., & Bagdasarian, A."
   status: "under_review"
-- title: "When Copies Count: Auditing AI Detection in Public Comments"
+- title: "Detecting coordinated and AI-generated comment campaigns in government rulemaking records at scale."
   authors: "Bagdasarian, A."
-  status: "under_review"
+  status: "in_progress"
