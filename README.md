@@ -50,7 +50,7 @@ For site links in posts, use Jekyll's URL filter, for example `[CV]({{ site.cv_p
 
 The homepage includes `WebSite`, `ProfilePage`, and `Person` structured data identifying Aram Bagdasarian and linking the existing GitHub, Google Scholar, and ORCID profiles. The description uses the opening sentence supplied for the homepage. Canonical URLs, crawlable HTML, `robots.txt`, and the generated `sitemap.xml` support discovery. No logo or favicon is added.
 
-To set up Search Console, add `https://arambagdasarian.github.io/` as a URL-prefix property and choose HTML-tag verification. Copy only the tag's `content` value into `google_site_verification` in `_config.yml`, publish, then click Verify in Search Console. Submit `sitemap.xml` and use URL Inspection to request indexing of the homepage. Keep the verification value in place after verification. Google controls indexing and ranking; publishing or submitting a request does not guarantee either.
+Search Console uses the supplied HTML-file verification: `googleb5d402660fc00b86.html` is published unchanged at the site root. Keep it in place after verification, without front matter or the site layout. It is excluded from the sitemap, and the build checks validate its verification text separately from ordinary pages. In the URL-prefix property for `https://arambagdasarian.github.io/`, choose HTML-file verification and click Verify after deployment. Then submit `sitemap.xml` and use URL Inspection to request indexing of the homepage. The optional `google_site_verification` config remains available for HTML-tag verification if needed later. Google controls indexing and ranking; publishing or submitting a request does not guarantee either.
 
 ## Preview locally
 

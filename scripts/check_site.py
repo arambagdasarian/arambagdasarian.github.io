@@ -3,6 +3,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 import argparse
+import re
 
 
 class Page(HTMLParser):
@@ -39,11 +40,15 @@ def check(root, origin, baseurl):
     pages = {}
     for path in root.rglob("*.html"):
         text = path.read_text()
+        relative = path.relative_to(root).as_posix()
+        if re.fullmatch(r"google[0-9a-f]+\.html", relative):
+            # Ownership verification files must remain plain text, without the site layout.
+            assert text.strip() == f"google-site-verification: {relative}", f'Invalid verification file: {path}'
+            continue
         assert "{{" not in text and "{%" not in text, f'Unrendered template in {path}'
         assert "\u2014" not in text, f'Em dash in {path}'
         page = Page(text)
         assert page.h1 == 1 and page.lang and page.description, f'Page structure in {path}'
-        relative = path.relative_to(root).as_posix()
         route = "/" + relative.removesuffix("index.html")
         if relative != "404.html":
             assert page.canonical == origin + baseurl + route, f'Canonical URL in {path}'

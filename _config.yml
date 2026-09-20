@@ -38,6 +38,10 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: "googleb5d402660fc00b86.html"
+    values:
+      sitemap: false
 exclude:
   - Gemfile
   - Gemfile.lock
