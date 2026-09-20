@@ -55,6 +55,14 @@ h2 { font-size: 1.32rem; margin: 0 0 18px; font-weight: 400; }
 .research-visual-title::before { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 10px; }
 .research-visual:hover .research-visual-title, .research-visual:focus .research-visual-title { opacity: 1; visibility: visible; }
 .research-visual.is-dismissed .research-visual-title { opacity: 0; visibility: hidden; }
+.video-dialog-open { overflow: hidden; }
+.research-video-dialog { width: min(840px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 20px; border: 1px solid var(--rule); border-radius: 4px; color: var(--ink); background: #fff; font: inherit; }
+.research-video-dialog::backdrop { background: rgb(0 0 0 / .6); }
+.research-video-toolbar { position: sticky; top: 0; z-index: 1; display: flex; justify-content: flex-end; margin: 0 0 12px; background: #fff; }
+.research-video-close { min-height: 44px; padding: 8px 12px; border: 0; background: #fff; color: inherit; font: inherit; font-size: .9rem; text-decoration: underline; text-underline-offset: .17em; cursor: pointer; }
+.research-video-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.research-video-dialog h2 { margin: 0 0 16px; font-size: 1rem; line-height: 1.5; }
+.research-player { display: block; width: 100%; height: auto; max-height: 65dvh; object-fit: contain; background: #fff; }
 @media (max-width: 600px) {
   .research-item--visual { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .research-visual { order: -1; }

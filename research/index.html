@@ -55,3 +55,10 @@ research_visuals: true
   </ul>
   {% endif %}
 </section>
+<dialog id="research-video-dialog" class="research-video-dialog" aria-labelledby="research-video-title">
+  <form method="dialog" class="research-video-toolbar">
+    <button class="research-video-close" autofocus>Back to research</button>
+  </form>
+  <h2 id="research-video-title"></h2>
+  <video class="research-player" controls muted playsinline loop preload="none"></video>
+</dialog>

@@ -15,6 +15,7 @@
   visual:
     video: "/assets/video/trajectory-comparison.mp4"
     poster: "/assets/images/trajectory-network.webp"
+    page: "/research/network/"
     style: "network"
     width: 720
     height: 540

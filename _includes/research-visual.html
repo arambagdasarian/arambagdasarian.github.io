@@ -1,4 +1,4 @@
-<a class="research-visual{% if include.paper.visual.style == 'network' %} research-visual--network{% endif %}" href="{% if include.paper.url %}{{ include.paper.url }}{% else %}{{ include.paper.visual.video | relative_url }}{% endif %}" aria-label="{{ include.paper.title | escape }}">
+<a class="research-visual{% if include.paper.visual.style == 'network' %} research-visual--network{% endif %}" href="{% if include.paper.url %}{{ include.paper.url }}{% else %}{{ include.paper.visual.page | default: include.paper.visual.video | relative_url }}{% endif %}"{% if include.paper.visual.page %} data-video-dialog{% endif %} aria-label="{{ include.paper.title | escape }}">
   <video muted playsinline loop preload="none" poster="{{ include.paper.visual.poster | relative_url }}" aria-hidden="true" tabindex="-1" width="{{ include.paper.visual.width | default: 480 }}" height="{{ include.paper.visual.height | default: 360 }}">
     <source src="{{ include.paper.visual.video | relative_url }}" type="video/mp4">
   </video>

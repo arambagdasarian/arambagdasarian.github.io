@@ -1,0 +1,10 @@
+---
+title: Research video
+permalink: /research/network/
+---
+{% assign paper = site.data.research | where_exp: "paper", "paper.visual.style == 'network'" | first %}
+<p class="back-link"><a href="{{ '/research/' | relative_url }}">Back to research</a></p>
+<h1>{{ paper.title | escape }}</h1>
+<video class="research-player" controls playsinline preload="metadata" poster="{{ paper.visual.poster | relative_url }}" aria-label="{{ paper.title | escape }}" width="{{ paper.visual.width }}" height="{{ paper.visual.height }}">
+  <source src="{{ paper.visual.video | relative_url }}" type="video/mp4">
+</video>
